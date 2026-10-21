@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ScalePods — Schedule Your Interview</title>
+  <title>ZV Steels — Schedule Your Interview</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -124,7 +124,7 @@
     }
 
     .logo-top {
-      height: 36px;
+      height: 60px;
       width: auto;
       filter: var(--logo-filter);
       opacity: 0.9;
@@ -550,7 +550,7 @@
       padding: 16px 0 4px;
     }
     .sched2-logo img {
-      height: 28px;
+      height: 44px;
       width: auto;
       filter: var(--logo-filter);
       opacity: 0.65;
@@ -1166,7 +1166,7 @@
       .profile-name { font-size: 17px; }
       .input-group .custom-select-trigger { padding: 16px 38px 0 46px; }
       .input-group .custom-select-menu .opt { padding: 12px 14px 12px 46px; font-size: 13px; }
-      .logo-top { height: 28px; margin-bottom: 28px; }
+      .logo-top { height: 40px; margin-bottom: 28px; }
     }
   </style>
 </head>
@@ -1187,7 +1187,7 @@
 
 <!-- ===== STEP 1 — Premium Form ===== -->
 <div class="step form-step" id="step1">
-  <img class="logo-top" src="https://www.scalepods.co/_next/image?url=%2Fscalepods-navbar-logo.png&w=256&q=75&dpl=dpl_2jQXMTMgbu5pmuszg3nbv3xXvryw" alt="ScalePods" />
+  <img class="logo-top" src="https://www.zvsteels.com/assets/img/zv_logo.png" alt="ZV Steels" />
   <div class="form-card" id="formCard">
 
     <!-- Profile Section -->
@@ -1291,7 +1291,7 @@
 
     <!-- Progress -->
     <div class="sched2-logo">
-      <img src="https://www.scalepods.co/_next/image?url=%2Fscalepods-navbar-logo.png&w=256&q=75&dpl=dpl_2jQXMTMgbu5pmuszg3nbv3xXvryw" alt="ScalePods" />
+      <img src="https://www.zvsteels.com/assets/img/zv_logo.png" alt="ZV Steels" />
     </div>
     <div class="sched-progress">
       <div class="step-label">
@@ -1416,12 +1416,10 @@
   const ADMIN_EMAIL = '%VITE_ADMIN_EMAIL%';
 
   const INTERVIEWERS = [
-    { name: 'Adnan', email: 'adnan@scalepods.co', slug: 'a7x3k9m2', campaign: 'Sales' },
-    { name: 'Raunak', email: 'raunak@scalepods.co', slug: 'q5p8r1n4', campaign: 'Sales' },
-    { name: 'Raunak', email: 'raunak@scalepods.tech', slug: 't2w6b0d9', campaign: 'Test 1' },
-    { name: 'Palashy', email: 'palashy@scalepods.co', slug: 'm4j7c3v1', campaign: 'Test' },
-    { name: 'Palki', email: 'palki@scalepods.co', slug: 'p7k2x8n1', campaign: '' },
-    { name: 'Abeer', email: 'abeer@scalepods.co', slug: 'h6v9d4x8', campaign: '' },
+    { name: 'Tasneem',   email: 'hr@zvsteels.com',           slug: 'zf6exs2k', campaign: '' },
+    { name: 'Sachin',    email: 'sachin.mishra@zvsteels.com', slug: '19fw8m0u', campaign: '' },
+    { name: 'Zameer',    email: 'zam@zvsteels.com',           slug: 'hcrkw2yt', campaign: '' },
+    { name: 'Muffaddal', email: 'muffaddal@zvsteels.com',     slug: 'o7a1bur2', campaign: '' },
   ];
 
   let campaigns = [];
@@ -1521,13 +1519,13 @@
     const isLight = document.documentElement.getAttribute('data-theme') === 'light';
     const theme = isLight ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('scalePodsTheme', theme);
+    localStorage.setItem('zvSteelsTheme', theme);
     document.getElementById('themeToggle').querySelector('.sun-icon').style.display = isLight ? '' : 'none';
     document.getElementById('themeToggle').querySelector('.moon-icon').style.display = isLight ? 'none' : '';
   }
 
   (function initTheme() {
-    const saved = localStorage.getItem('scalePodsTheme') || 'light';
+    const saved = localStorage.getItem('zvSteelsTheme') || 'light';
     document.documentElement.setAttribute('data-theme', saved);
     document.getElementById('themeToggle').querySelector('.sun-icon').style.display = saved === 'light' ? '' : 'none';
     document.getElementById('themeToggle').querySelector('.moon-icon').style.display = saved === 'light' ? 'none' : '';
@@ -1578,7 +1576,7 @@
   fetch(ROLE_URL).then(r => r.json()).then(res => {
     campaigns = res.data ?? res;
     roleSelect.innerHTML = '<option value="" disabled selected></option>';
-    campaigns.filter(c => c.Status === 'on').forEach(c => {
+    campaigns.filter(c => c.Status === 'open').forEach(c => {
       const o = document.createElement('option');
       o.value = c.CampaignName; o.textContent = c.CampaignName;
       roleSelect.appendChild(o);
