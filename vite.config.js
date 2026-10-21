@@ -8,7 +8,10 @@ function proxyRule(envUrl) {
     secure: false,
     configure: (proxy) => {
       proxy.on('proxyReq', (proxyReq) => {
-        proxyReq.path = url.pathname + url.search;
+        const clientQs = proxyReq.path.includes('?') ? proxyReq.path.substring(proxyReq.path.indexOf('?') + 1) : '';
+        const envQs = url.search.replace(/^\?/, '');
+        const merged = [envQs, clientQs].filter(Boolean).join('&');
+        proxyReq.path = url.pathname + (merged ? '?' + merged : '');
       });
     }
   };

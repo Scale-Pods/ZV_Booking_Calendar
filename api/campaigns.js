@@ -1,6 +1,6 @@
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
-const N8N_URL = process.env.VITE_ROLE_URL || 'https://n8n.srv1711190.hstgr.cloud/webhook/f1f73fff-1311-4fb6-8ed6-ea7efa1cb6c3?action=Roles';
+const N8N_URL = process.env.VITE_ROLE_URL || 'https://n8n.srv1010832.hstgr.cloud/webhook/ab8d28de-afb7-416f-aaf1-454949b27c18?action=Campaigns';
 
 export default async function handler(req, res) {
   try {

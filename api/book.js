@@ -1,6 +1,6 @@
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
-const N8N_URL = process.env.VITE_BOOK_URL || 'https://n8n.srv1711190.hstgr.cloud/webhook/b91d7ddb-0f62-4b38-96d3-fd43f6a644e1';
+const N8N_URL = process.env.VITE_BOOK_URL || 'https://n8n.srv1010832.hstgr.cloud/webhook/39ec0a1d-7b20-491a-8694-6f9be19b8d60';
 
 export default async function handler(req, res) {
   try {
